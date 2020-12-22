@@ -6,3 +6,6 @@ class Stack:
 
     def __len__(self):
         return len(self._storage)
+
+    def push(self, item):
+        self._storage.append(item)
