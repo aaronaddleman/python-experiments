@@ -1,2 +1,4 @@
 [run]
-source = ds
+source = 
+  ds
+  tests
