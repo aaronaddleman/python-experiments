@@ -9,3 +9,6 @@ class Stack:
 
     def push(self, item):
         self._storage.append(item)
+
+    def pop(self):
+        return self._storage.pop()
