@@ -10,7 +10,7 @@ class InventoryItem:
     def total_cost(self) -> float:
         return self.unit_price * self.quantity_on_hand
 
-@dataclass(order=True)
+@dataclass(order=True,unsafe_hash=True)
 class Person:
     """Listing of person name and zip code"""
     name: str
