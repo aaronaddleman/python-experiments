@@ -1,0 +1,20 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - name: Install build dependencies
+      run: pip install -U setuptools wheel build
+    - name: build
+      run: python -m build
