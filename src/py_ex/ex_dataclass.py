@@ -22,4 +22,7 @@ class Person:
 
 @dataclass()
 class FavoriteThings:
-    mylist: list[int] = field(default)
+    '''
+    Listing my favorite things
+    '''
+    mylist: list = field(default_factory=list)

@@ -37,5 +37,11 @@ def test_people_dict(people_dict):
 def test_mythings_noparams(mythings_noparams):
     '''
     What do you get with no favorite things?
+    Notice there are no params being passed..
+    also.. the example in the docs says to use
+    mylist: list[int]
+    and that is incorrect...
     '''
-    assert 1 == mythings_noparams
+    assert FavoriteThings(mylist=[]) == mythings_noparams
+    mythings_noparams.mylist += [4,5,6]
+    assert 3 == len(mythings_noparams.mylist)
