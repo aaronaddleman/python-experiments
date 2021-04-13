@@ -1,3 +1,5 @@
+from py_ex.ex_dataclass import *
+
 import pytest
 from dataThings import *
 
@@ -17,6 +19,10 @@ def people_dict():
         Person(name='John', zip=44444)
     ]
 
+@pytest.fixture
+def mythings_noparams():
+    return FavoriteThings()
+
 def test_inventory_list(inventory_items):
     assert 2 == len(inventory_items)
     assert 'apple' == inventory_items[0].name
@@ -28,3 +34,14 @@ def test_people_dict(people_dict):
     '''
     assert 4 == len(people_dict)
 
+def test_mythings_noparams(mythings_noparams):
+    '''
+    What do you get with no favorite things?
+    Notice there are no params being passed..
+    also.. the example in the docs says to use
+    mylist: list[int]
+    and that is incorrect...
+    '''
+    assert FavoriteThings(mylist=[]) == mythings_noparams
+    mythings_noparams.mylist += [4,5,6]
+    assert 3 == len(mythings_noparams.mylist)
