@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from dataclasses import field
 
 @dataclass
 class InventoryItem:
@@ -12,6 +13,13 @@ class InventoryItem:
 
 @dataclass(order=True,unsafe_hash=True)
 class Person:
-    """Listing of person name and zip code"""
+    """Listing of person name and zip code
+    This object allows for adding to a dictionary
+    by using the 'unsafe_hash' option. 
+    """
     name: str
     zip: int
+
+@dataclass()
+class FavoriteThings:
+    mylist: list[int] = field(default)

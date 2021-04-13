@@ -15,6 +15,13 @@ docker run -v "$PWD":/var/task "lambci/lambda:build-python3.7" /bin/sh -c "pip i
 ### testing
 
 ```shell
+# start a pyenv shell
+pipenv shell
+# enable develop mode
+# this creates some symbolic links to load 
+# files on the sys.path
+python setup.py develop
+# run test
 python -m pytest tests/test_dataThings.py
 ```
 
