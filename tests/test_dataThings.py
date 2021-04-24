@@ -1,7 +1,6 @@
 from py_ex.ex_dataclass import *
 
 import pytest
-from dataThings import *
 
 @pytest.fixture
 def inventory_items():
