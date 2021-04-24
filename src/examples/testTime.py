@@ -23,9 +23,9 @@ class EpochTime():
 
     def convert_to_human_text(self, time=None, unit=None):
         if unit == 'milliseconds_since_epoch':
-            date = datetime.fromtimestamp(time / 1e3)
+            date = datetime.datetime.fromtimestamp(time / 1e3)
         else:
-            date = datetime.fromtimestamp(time)
+            date = datetime.datetime.fromtimestamp(time)
         return date.strftime('%Y-%m-%d %H:%M:%S.%f')
 
     def set_second(self):
