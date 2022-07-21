@@ -100,7 +100,7 @@ def round_time(dt_object=None, date_delta=datetime.timedelta(minutes=1),
                                           - dt_object.microsecond)
 
 
-sample_a = 1614218399298
+sample_x = 1614218399298
 sample_b = 1614218399298 / 1000.0
 sample_c = 1612918857568 / 1000.0
 

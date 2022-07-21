@@ -1,5 +1,8 @@
 """
+Examples of a pattern.
+
 *What is this pattern about?
+
 The Adapter pattern provides a different interface for a class. We can
 think about it as a cable adapter that allows you to charge a phone
 somewhere that has outlets in a different shape. Following this idea,
@@ -34,34 +37,50 @@ T = TypeVar("T")
 
 
 class Dog:
+    """Class of a dog."""
+
     def __init__(self) -> None:
+        """Create a class of dog with a default name."""
         self.name = "Dog"
 
     def bark(self) -> str:
+        """Create a method for how the dog creates a sound."""
         return "woof!"
 
 
 class Cat:
+    """Class of a cat."""
+
     def __init__(self) -> None:
+        """Create a cat class with a default name."""
         self.name = "Cat"
 
     def meow(self) -> str:
+        """Define a sound for how it makes a meow."""
         return "meow!"
 
 
 class Human:
+    """Class of a human."""
+
     def __init__(self) -> None:
+        """Create a human class with a default name."""
         self.name = "Human"
 
     def speak(self) -> str:
+        """Create a method for how the human creates sound."""
         return "'hello'"
 
 
 class Car:
+    """Create a car class."""
+
     def __init__(self) -> None:
+        """Create a car with a default name."""
         self.name = "Car"
 
     def make_noise(self, octane_level: int) -> str:
+        """Create a method for the car that makes sound."""
         return f"vroom{'!' * octane_level}"
 
 
@@ -90,6 +109,8 @@ class Adapter:
 
 def main():
     """
+    Run of the classes.
+
     >>> objects = []
     >>> dog = Dog()
     >>> print(dog.__dict__)
@@ -98,7 +119,7 @@ def main():
     >>> objects.append(Adapter(dog, make_noise=dog.bark))
 
     >>> objects[0].__dict__['obj'], objects[0].__dict__['make_noise']
-    (<...Dog object at 0x...>, <bound method Dog.bark of <...Dog object at 0x...>>)
+    (<...Dog object at 0x...>, <bound method Dog.bark of <...Dog object at 0x.
 
     >>> print(objects[0].original_dict())
     {'name': 'Dog'}
